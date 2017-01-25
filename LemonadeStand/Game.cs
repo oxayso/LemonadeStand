@@ -6,12 +6,20 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Game
+    public class Game : Player
+
     {
-        public void DisplayWelcomeMsg()
+        public Player playerOne;
+
+        public Game()
+        {
+            playerOne = new Player();
+        }
+
+        public void DisplayWelcomeMessage()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-            int leftOffSet = (Console.WindowWidth / 7);
+            int leftOffSet = (Console.WindowWidth / 8);
             int rightOffSet = (Console.WindowHeight / 38);
             Console.SetCursorPosition(leftOffSet, rightOffSet);
             Console.WriteLine("Welcome to Lemonsville! In this game, you are in charge of running your own Lemonade Stand.");
@@ -20,31 +28,45 @@ namespace LemonadeStand
 
         public void DisplayBreakpoint()
         {
-            Console.WriteLine("\n\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *");
+            Console.WriteLine("\n\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * "
+                + " * * * * * * * * * * *");
         }
 
         public void DisplayRules()
         {
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.WriteLine("\nTo efficiently manage your lemonade stand, you will need to make 3 important decisions everyday: \n\n1.) How many glasses of lemonade to make \n(Only one batch is made every morning) \n\n2.) How many advertising flyers to make \n(Flyers cost fifteen cents each) \n\n3.) What price you are going to charge for each glass \n\nThink you're ready to begin? To start, you have $2.00 cash. Lucky you, your neighbor lended you some sugar, \ntherefore your cost to make lemonade is 2 cents per glass. Warning, this may change in the future.");
+            Console.WriteLine("\nTo efficiently manage your lemonade stand, you will need to make 3 important decisions everyday: "
+                + "\n\n1.) How many glasses of lemonade to make \n(Only one batch is made every morning) "
+                + "\n\n2.) How many advertising flyers to make \n(Flyers cost fifteen cents each) "
+                + "\n\n3.) What price you are going to charge for each glass \n\nThink you're ready to begin? "
+                + "To start, you have $20.00 cash. Lucky you, your neighbor lended you some sugar, \ntherefore your cost to make lemonade "
+                + " is 10 cents per glass. "
+                + "Warning, this may change in the future.");
             Console.ResetColor();
         }
 
-        public string KnowMore()
+        public string GiveMoreInformation()
         {
             Console.WriteLine("\nWould you like to know more? \n\n[Y] YES \n[N] NO");
-            string more = Console.ReadLine().ToUpper();
-            return more;
+            string information = Console.ReadLine().ToUpper();
+            return information;
         }
-        public void GiveOptionKnowMore(string more)
+        public void GiveOptionKnowMore(string information)
         {
-            switch (more)
+            switch (information)
             {
                 case "Y":
-                    Console.WriteLine("\n-Your expenses are the sum of the cost of lemonade + the cost of the flyers. \n\n-Your profits are the difference between the income from the sales and your expenses. \n\n-The number of glasses you sell each day is dependent upon the price you charge, and the number of advertising flyers \nyou post. \n\n-Keep track of your assets, because you can't spend mre money than you actually have!");
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    Console.WriteLine("\n-Your expenses are the sum of the cost of lemonade + the cost of the flyers. "
+                        + "\n\n-Your profits are the difference between the income from the sales and your expenses. "
+                        + "\n\n-The number of glasses you sell each day is dependent upon the price you charge, and the number of advertising flyers "
+                        + "\nyou post. \n\n-Keep track of your assets, because you can't spend mre money than you actually have!");
+                    Console.ResetColor();
                     break;
                 case "N":
-                    Console.WriteLine("\nI take it that you're ready to begin? Enter the number of players.");
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    Console.WriteLine("\nI take it that you're ready to begin? Press [ENTER]");
+                    Console.ResetColor();
                     Console.ReadLine();
                     break;
                 default:
@@ -53,20 +75,20 @@ namespace LemonadeStand
             }
 
         }
-
-
-
-
-
+      
 
         public void RunGame()
         {
-            DisplayWelcomeMsg();
+            DisplayWelcomeMessage();
             DisplayBreakpoint();
             DisplayRules();
             DisplayBreakpoint();
-            string more = KnowMore();
-            GiveOptionKnowMore(more);
+            string information = GiveMoreInformation();
+            GiveOptionKnowMore(information);
+            DisplayBreakpoint();
+            playerOne.GetPlayerName();
+            playerOne.PrintPlayerName();
+            DisplayBreakpoint();
         }
     }
 }
