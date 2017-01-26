@@ -12,7 +12,7 @@ namespace LemonadeStand
         
         public virtual void GetPlayerName()
         {
-            Console.WriteLine("\nEnter your name to start your business!");
+            Console.WriteLine("\nType your name to start your business!");
             name = Console.ReadLine();
         }
 

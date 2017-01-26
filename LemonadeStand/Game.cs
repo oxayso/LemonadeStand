@@ -6,15 +6,18 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    public class Game : Player
+    public class Game
 
     {
         public Player playerOne;
-
+        public Day day;
         public Game()
         {
             playerOne = new Player();
+            day = new Day();
         }
+
+       
 
         public void DisplayWelcomeMessage()
         {
@@ -59,8 +62,9 @@ namespace LemonadeStand
                     Console.ForegroundColor = ConsoleColor.DarkGray;
                     Console.WriteLine("\n-Your expenses are the sum of the cost of lemonade + the cost of the flyers. "
                         + "\n\n-Your profits are the difference between the income from the sales and your expenses. "
-                        + "\n\n-The number of glasses you sell each day is dependent upon the price you charge, and the number of advertising flyers "
-                        + "\nyou post. \n\n-Keep track of your assets, because you can't spend mre money than you actually have!");
+                        + "\n\n-The number of glasses you sell each day is dependent upon the price you charge, the number of "
+                        + "advertising flyers, and \nthe weather."
+                        + "\n\n-Keep track of your assets, because you can't spend more money than you actually have!");
                     Console.ResetColor();
                     break;
                 case "N":
@@ -75,6 +79,15 @@ namespace LemonadeStand
             }
 
         }
+
+        //public void DisplayCurrentDay()
+        //{
+        //    Console.WriteLine($"\nToday is:");
+        //    Console.WriteLine($"\nThe weather is looking:");
+        //}
+
+
+
       
 
         public void RunGame()
@@ -89,6 +102,9 @@ namespace LemonadeStand
             playerOne.GetPlayerName();
             playerOne.PrintPlayerName();
             DisplayBreakpoint();
+            //DisplayCurrentDay();
+            day.weather.GenerateRandomWeather();
+            day.DisplayCurrentWeather();        
         }
     }
 }
