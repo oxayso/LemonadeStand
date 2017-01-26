@@ -9,29 +9,39 @@ namespace LemonadeStand
     public class Day
     {
         public Weather weather;
-
-        public Day day;
+        //public Day currentDay;
 
         public Day()
         {
             weather = new Weather();
         }
+
+        public string currentDay;
+
+
         public void DisplayCurrentWeather()
         {
             Console.WriteLine($"The weather today is: {weather.weatherCondition}.");
         }
 
-        //public void GetCurrentDay()
-        //{
-        //    for (int i = 0; i < 7; i++)
-        //    {
-                
-        //    }
-        //}
-        //public void DisplayCurrentDay()
-        //{
-        //    Console.WriteLine("Today is day: ");
-        //}
-      
+        public void DisplayPredictedWeather()
+        {
+            Console.WriteLine($"The predicted weather for tomorrow is: {weather.predictedWeather}.");
+
+        }
+        public void GenerateCurrentDay()
+        {
+            List<int> days = new List<int>() { 1, 2, 3, 4, 5, 6, 7 };
+            foreach (int currentDay in days)
+            {
+                Console.WriteLine(currentDay);
+            }
+        }
+
+        public void DisplayCurrentDay()
+        {
+            Console.WriteLine($"Today is day:{currentDay}");
+        }
+
     }
 }

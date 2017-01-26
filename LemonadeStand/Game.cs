@@ -31,8 +31,10 @@ namespace LemonadeStand
 
         public void DisplayBreakpoint()
         {
+            Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("\n\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * "
                 + " * * * * * * * * * * *");
+            Console.ResetColor();
         }
 
         public void DisplayRules()
@@ -50,7 +52,7 @@ namespace LemonadeStand
 
         public string GiveMoreInformation()
         {
-            Console.WriteLine("\nWould you like to know more? \n\n[Y] YES \n[N] NO");
+            Console.WriteLine("\nWould you like to know more? \n\n[Y] YES! \n[N] NO.");
             string information = Console.ReadLine().ToUpper();
             return information;
         }
@@ -79,17 +81,7 @@ namespace LemonadeStand
             }
 
         }
-
-        //public void DisplayCurrentDay()
-        //{
-        //    Console.WriteLine($"\nToday is:");
-        //    Console.WriteLine($"\nThe weather is looking:");
-        //}
-
-
-
       
-
         public void RunGame()
         {
             DisplayWelcomeMessage();
@@ -102,9 +94,13 @@ namespace LemonadeStand
             playerOne.GetPlayerName();
             playerOne.PrintPlayerName();
             DisplayBreakpoint();
-            //DisplayCurrentDay();
             day.weather.GenerateRandomWeather();
-            day.DisplayCurrentWeather();        
+            day.DisplayCurrentDay();
+            DisplayBreakpoint();
+            day.DisplayCurrentWeather();
+            day.weather.GeneratePredictedWeather();
+            day.DisplayPredictedWeather();
+            DisplayBreakpoint();
         }
     }
 }
