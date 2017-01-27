@@ -21,12 +21,15 @@ namespace LemonadeStand
 
         public void DisplayCurrentWeather()
         {
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine("\nWEATHER REPORT\n");
+            Console.ResetColor();
             Console.WriteLine($"The weather today is: {weather.weatherCondition}.");
         }
 
         public void DisplayPredictedWeather()
         {
-            Console.WriteLine($"The predicted weather for tomorrow is: {weather.predictedWeather}.");
+            Console.WriteLine($"\n\nThe predicted weather for tomorrow is: {weather.predictedWeather}.");
 
         }
         public void GenerateCurrentDay()

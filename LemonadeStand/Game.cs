@@ -21,17 +21,17 @@ namespace LemonadeStand
 
         public void DisplayWelcomeMessage()
         {
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             int leftOffSet = (Console.WindowWidth / 8);
             int rightOffSet = (Console.WindowHeight / 38);
             Console.SetCursorPosition(leftOffSet, rightOffSet);
-            Console.WriteLine("Welcome to Lemonsville! In this game, you are in charge of running your own Lemonade Stand.");
+            Console.WriteLine("Welcome to LemonLand! In this game, you are in charge of running your own Lemonade Stand.");
             Console.ResetColor();
         }
 
         public void DisplayBreakpoint()
         {
-            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
             Console.WriteLine("\n\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * "
                 + " * * * * * * * * * * *");
             Console.ResetColor();
@@ -81,7 +81,15 @@ namespace LemonadeStand
             }
 
         }
-      
+
+        // displaymakelemonade only for visual purposes only, will be in in vendor or wallet class
+        public void DisplayMakeLemonade()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.WriteLine("Let's Go Shopping! As of now, you have $20.00 USD. Spend wisely! ;)");
+            Console.ResetColor();
+        }
+
         public void RunGame()
         {
             DisplayWelcomeMessage();
@@ -101,6 +109,9 @@ namespace LemonadeStand
             day.weather.GeneratePredictedWeather();
             day.DisplayPredictedWeather();
             DisplayBreakpoint();
+            DisplayMakeLemonade();
+            DisplayBreakpoint();
+            
         }
     }
 }
