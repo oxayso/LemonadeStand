@@ -8,26 +8,20 @@ namespace LemonadeStand
 {
     public class Ingredient
     {
-        public int Lemon;
-        public int Sugar;
-        public int Ice;
-        public int Cups;
-        public double price;
+         
+        //for (int i = 0; i<userInput; i++)
+        //    {
+            
+        //    inventory.lemons.Add(new LemonadeStand);
+        //    }
 
-        public Ingredient(int Lemon, int Sugar, int Ice, int Cups, double price)
-        {
-            this.Lemon = Lemon;
-            this.Sugar = Sugar;
-            this.Ice = Ice;
-            this.Cups = Cups;
-            this.price = price;
-        }
+}
+    
+    //    public void userInput()
+    //{
 
-        public Ingredient()
-        {
+    //} 
 
-        }
-    }
-
+   
 
 }

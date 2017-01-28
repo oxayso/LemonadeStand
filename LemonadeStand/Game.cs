@@ -21,7 +21,7 @@ namespace LemonadeStand
 
         public void DisplayWelcomeMessage()
         {
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.ForegroundColor = ConsoleColor.Yellow;
             int leftOffSet = (Console.WindowWidth / 8);
             int rightOffSet = (Console.WindowHeight / 38);
             Console.SetCursorPosition(leftOffSet, rightOffSet);
@@ -86,9 +86,21 @@ namespace LemonadeStand
         public void DisplayMakeLemonade()
         {
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.WriteLine("Let's Go Shopping! As of now, you have $20.00 USD. Spend wisely! ;)");
+            Console.WriteLine("But first, let's go shopping! As of now, you have $20.00 USD. Spend wisely! ;)");
             Console.ResetColor();
         }
+
+        // gotostore only for visual purposes only, will be in in vendor or wallet class
+
+        public void GoToStore()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine("Welcome to Lime 'n Save. Where we paint lemons GOLD.");
+            Console.ResetColor();
+        }
+
+
+
 
         public void RunGame()
         {
@@ -110,6 +122,8 @@ namespace LemonadeStand
             day.DisplayPredictedWeather();
             DisplayBreakpoint();
             DisplayMakeLemonade();
+            DisplayBreakpoint();
+            GoToStore();
             DisplayBreakpoint();
             
         }

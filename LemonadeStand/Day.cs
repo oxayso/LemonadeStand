@@ -32,14 +32,7 @@ namespace LemonadeStand
             Console.WriteLine($"\n\nThe predicted weather for tomorrow is: {weather.predictedWeather}.");
 
         }
-        public void GenerateCurrentDay()
-        {
-            List<int> days = new List<int>() { 1, 2, 3, 4, 5, 6, 7 };
-            foreach (int currentDay in days)
-            {
-                Console.WriteLine(currentDay);
-            }
-        }
+        
 
         public void DisplayCurrentDay()
         {
