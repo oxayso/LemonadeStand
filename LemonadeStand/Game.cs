@@ -99,9 +99,6 @@ namespace LemonadeStand
             Console.ResetColor();
         }
 
-
-
-
         public void RunGame()
         {
             DisplayWelcomeMessage();

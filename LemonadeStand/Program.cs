@@ -12,12 +12,6 @@ namespace LemonadeStand
         {
             Game game = new Game();
             game.RunGame();
-            //Store store = new Store();
-            //Ingredient ingredient = new Ingredient();
-            //store.AddIngredient(ingredient);
-            //Vendor vendor = new Vendor();
-            //Ingredient lemonade = vendor.MakeLemonade();
-            //store.inventory.ingredient.Add(ingredient);
             Console.ReadLine();           
         }
     }

@@ -12,6 +12,7 @@ namespace LemonadeStand //buy, sell
         public int lemonCount;
         public int sugarCount;
         public int iceCount;
+        public int cupCount;
         public double totalPrice;
         
 
@@ -76,14 +77,23 @@ namespace LemonadeStand //buy, sell
             }
         }
 
-        //public void SetPrice()
-        //{
-        //    for(int i = 0; i < totalPrice; i++)
-        //    {
-        //        Price price = new Price
-        //        inventory.priceS.Add(price);
-        //    }
-        //}
+        public void SellCups()
+        {
+            for(int i = 0; i < cupCount; i++)
+            {
+                Cup cup = new Cup();
+                inventory.cups.Add(cup);
+            }
+        }
+
+        public void SetPrice()
+        {
+            for (double i = 0; i < totalPrice; i++)
+            {
+                Price price = new Price();
+                inventory.priceS.Add(price);
+            }
+        }
 
     }
 }
