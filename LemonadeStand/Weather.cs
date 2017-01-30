@@ -21,7 +21,7 @@ namespace LemonadeStand
             public void GeneratePredictedWeather()
         {
             Random random = new Random();
-            string[] weather = { "Sunny, Expected wind chills in the evening.", "70 degrees, Possibility for a little afternoon rain.", "High 80's, Fluffy clouds & Sun.", "Low 70's, Humid.", "77 degrees, Mostly Sunny & Clear skies.", "75 degrees, A full day of Sunshine." };
+            string[] weather = { "Sunny, Expected wind chills in the evening.", "70 degrees, Possibility for a little afternoon rain.", "High 70's, Fluffy clouds & Sun.", "Low 70's, Humid.", "77 degrees, Mostly Sunny & Clear skies.", "75 degrees, A full day of Sunshine." };
             predictedWeather = weather[(random.Next(0, weather.Length))];
         }
     }

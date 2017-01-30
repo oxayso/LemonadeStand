@@ -21,8 +21,6 @@ namespace LemonadeStand
             store = new Store();
         }
 
-       
-
         public void DisplayWelcomeMessage()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -95,9 +93,11 @@ namespace LemonadeStand
             DisplayBreakpoint();
             playerOne.GetPlayerName();
             playerOne.PrintPlayerName();
+            Console.ReadKey();
             DisplayBreakpoint();
             day.weather.GenerateRandomWeather();
             day.DisplayCurrentDay();
+            Console.ReadKey();
             DisplayBreakpoint();
             day.DisplayCurrentWeather();
             day.weather.GeneratePredictedWeather();
@@ -107,9 +107,7 @@ namespace LemonadeStand
             DisplayBreakpoint();
             store.GoToStore();
             DisplayBreakpoint();
-            //store.GiveOptions(option);
-            //store.OptionResult(option);
-           
+            playerOne.MakeLemonade();          
             
         }
     }

@@ -47,7 +47,7 @@ namespace LemonadeStand //buy, sell
             int ice = int.Parse(Console.ReadLine());
             Console.WriteLine("How many cups do you need?");
             int cup = int.Parse(Console.ReadLine());
-            Console.WriteLine("How many cents will you charge per cup?");
+            Console.WriteLine("How much will you charge per cup?");
             double price = double.Parse(Console.ReadLine());
         }
         public void BuyLemons()

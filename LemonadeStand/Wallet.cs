@@ -18,6 +18,7 @@ namespace LemonadeStand
             Console.ResetColor();
         }
 
+        //public void CalculateWallet();
 
 
     }
