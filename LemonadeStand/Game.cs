@@ -11,10 +11,14 @@ namespace LemonadeStand
     {
         public Player playerOne;
         public Day day;
+        public Wallet wallet;
+        public Store store;
         public Game()
         {
             playerOne = new Player();
             day = new Day();
+            wallet = new Wallet();
+            store = new Store();
         }
 
        
@@ -40,10 +44,9 @@ namespace LemonadeStand
         public void DisplayRules()
         {
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.WriteLine("\nTo efficiently manage your lemonade stand, you will need to make 3 important decisions everyday: "
+            Console.WriteLine("\nTo efficiently manage your lemonade stand, you will need to make 2 important decisions everyday: "
                 + "\n\n1.) How many glasses of lemonade to make \n(Only one batch is made every morning) "
-                + "\n\n2.) How many advertising flyers to make \n(Flyers cost fifteen cents each) "
-                + "\n\n3.) What price you are going to charge for each glass \n\nThink you're ready to begin? "
+                + "\n\n2.) What price you are going to charge for each glass \n\nThink you're ready to begin? "
                 + "To start, you have $20.00 cash. Lucky you, your neighbor lended you some sugar, \ntherefore your cost to make lemonade "
                 + " is 10 cents per glass. "
                 + "Warning, this may change in the future.");
@@ -62,10 +65,9 @@ namespace LemonadeStand
             {
                 case "Y":
                     Console.ForegroundColor = ConsoleColor.DarkGray;
-                    Console.WriteLine("\n-Your expenses are the sum of the cost of lemonade + the cost of the flyers. "
+                    Console.WriteLine("\n-Your expenses are the sum of the cost of lemonade. "
                         + "\n\n-Your profits are the difference between the income from the sales and your expenses. "
-                        + "\n\n-The number of glasses you sell each day is dependent upon the price you charge, the number of "
-                        + "advertising flyers, and \nthe weather."
+                        + "\n\n-The number of glasses you sell each day is dependent upon the price you charge + the weather."
                         + "\n\n-Keep track of your assets, because you can't spend more money than you actually have!");
                     Console.ResetColor();
                     break;
@@ -80,23 +82,6 @@ namespace LemonadeStand
 
             }
 
-        }
-
-        // displaymakelemonade only for visual purposes only, will be in in vendor or wallet class
-        public void DisplayMakeLemonade()
-        {
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.WriteLine("But first, let's go shopping! As of now, you have $20.00 USD. Spend wisely! ;)");
-            Console.ResetColor();
-        }
-
-        // gotostore only for visual purposes only, will be in in vendor or wallet class
-
-        public void GoToStore()
-        {
-            Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine("Welcome to Lime 'n Save. Where we paint lemons GOLD.");
-            Console.ResetColor();
         }
 
         public void RunGame()
@@ -118,10 +103,13 @@ namespace LemonadeStand
             day.weather.GeneratePredictedWeather();
             day.DisplayPredictedWeather();
             DisplayBreakpoint();
-            DisplayMakeLemonade();
+            wallet.DisplayMakeLemonade();
             DisplayBreakpoint();
-            GoToStore();
+            store.GoToStore();
             DisplayBreakpoint();
+            //store.GiveOptions(option);
+            //store.OptionResult(option);
+           
             
         }
     }
