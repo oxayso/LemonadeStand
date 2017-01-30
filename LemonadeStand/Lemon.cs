@@ -8,5 +8,6 @@ namespace LemonadeStand
 {
     public class Lemon
     {
+        double price = 0.05;
     }
 }

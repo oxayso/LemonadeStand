@@ -107,8 +107,7 @@ namespace LemonadeStand
             DisplayBreakpoint();
             store.GoToStore();
             DisplayBreakpoint();
-            playerOne.MakeLemonade();          
-            
+            playerOne.GetIngredientAmounts();            
         }
     }
 }

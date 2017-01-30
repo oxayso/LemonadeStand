@@ -14,7 +14,7 @@ namespace LemonadeStand //buy, sell
         public int iceCount;
         public int cupCount;
         public double totalPrice;
-        
+        public Pitcher lemonade;
 
         public Inventory inventory = new Inventory();
         
@@ -37,18 +37,18 @@ namespace LemonadeStand //buy, sell
             Console.WriteLine("Let's Go Shopping!");
             Console.ResetColor();
         }
-        public void MakeLemonade()
+        public void GetIngredientAmounts()
         {
             Console.WriteLine("How many lemons will you need?");
             lemonCount = int.Parse(Console.ReadLine());
             Console.WriteLine("How many spoons of sugar would you like to use?");
-            int sugar = int.Parse(Console.ReadLine());
+            sugarCount = int.Parse(Console.ReadLine());
             Console.WriteLine("How many cubes of ice will you need?");
-            int ice = int.Parse(Console.ReadLine());
+            iceCount = int.Parse(Console.ReadLine());
             Console.WriteLine("How many cups do you need?");
-            int cup = int.Parse(Console.ReadLine());
+            cupCount = int.Parse(Console.ReadLine());
             Console.WriteLine("How much will you charge per cup?");
-            double price = double.Parse(Console.ReadLine());
+            totalPrice = double.Parse(Console.ReadLine());
         }
         public void BuyLemons()
         {
@@ -77,7 +77,7 @@ namespace LemonadeStand //buy, sell
             }
         }
 
-        public void SellCups()
+        public void BuyCups()
         {
             for(int i = 0; i < cupCount; i++)
             {
@@ -86,14 +86,39 @@ namespace LemonadeStand //buy, sell
             }
         }
 
-        public void SetPrice()
+        public void RemoveLemons()
         {
-            for (double i = 0; i < totalPrice; i++)
+            for(int i = 0; i < lemonCount; i--)
             {
-                Price price = new Price();
-                inventory.priceS.Add(price);
+                Lemon lemon = new Lemon();
+                inventory.lemons.Remove(lemon);
             }
         }
 
+        public void RemoveSugar()
+        {
+            for (int i = 0; i < sugarCount; i--)
+            {
+                Sugar sugar = new Sugar();
+                inventory.sugars.Remove(sugar);
+            }
+        }
+
+        public void RemoveIce()
+        {
+            for (int i = 0; i < iceCount; i--)
+            {
+                Ice ice = new Ice();
+                inventory.ices.Remove(ice);
+            }
+        }
+
+
+        public void CreatePitcherOfLemonade()
+        {
+            lemonade = new Pitcher();
+            lemonade.price = totalPrice;
+        }
+        
     }
 }
