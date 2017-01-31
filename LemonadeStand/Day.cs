@@ -16,13 +16,13 @@ namespace LemonadeStand
             weather = new Weather();
         }
 
-        public string currentDay;
+        //public string currentDay;
 
 
         public void DisplayCurrentWeather()
         {
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine("\nWEATHER REPORT\n");
+            Console.WriteLine("\nDAILY WEATHER REPORT\n");
             Console.ResetColor();
             Console.WriteLine($"The weather today is: {weather.weatherCondition}");
         }
@@ -35,7 +35,7 @@ namespace LemonadeStand
         
         public void DisplayCurrentDay()
         {
-            Console.WriteLine($"Today is day:{currentDay}");
+            Console.WriteLine($"Today is day: # 1");
         }
 
     }

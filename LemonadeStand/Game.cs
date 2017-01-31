@@ -76,6 +76,10 @@ namespace LemonadeStand
                     Console.ReadLine();
                     break;
                 default:
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("\n*** THERE WAS AN ERROR PROCESSING YOUR REQUEST. PLEASE TRY AGAIN. ***\n");
+                    Console.ResetColor();
+                    GiveMoreInformation();
                     break;
 
             }
@@ -93,23 +97,26 @@ namespace LemonadeStand
             DisplayBreakpoint();
             playerOne.GetPlayerName();
             playerOne.PrintPlayerName();
-            Console.ReadKey();
             DisplayBreakpoint();
+            Console.ReadKey();
             day.weather.GenerateRandomWeather();
             day.DisplayCurrentDay();
-            Console.ReadKey();
             DisplayBreakpoint();
+            Console.ReadKey();
             day.DisplayCurrentWeather();
             day.weather.GeneratePredictedWeather();
             day.DisplayPredictedWeather();
             DisplayBreakpoint();
+            Console.ReadKey();
             wallet.DisplayMakeLemonade();
             DisplayBreakpoint();
             store.GoToStore();
             DisplayBreakpoint();
+            string option = playerOne.PitcherRecipeOption();
+            playerOne.PitcherResult(option);
+            DisplayBreakpoint();
             playerOne.CreatePitcherOfLemonade();
             DisplayBreakpoint();
-            string option = 
             playerOne.GetIngredientAmounts();            
         }
     }

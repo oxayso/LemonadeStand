@@ -41,7 +41,8 @@ namespace LemonadeStand //buy, sell
 
         public string PitcherRecipeOption()
         {
-            Console.WriteLine("Would you like to utilize the 'Perfect Lemonade Recipe' or customize your own? \n[Y] YES! \n[N] NO.\n");
+            Console.WriteLine("Would you like to utilize the 'Perfect Lemonade Recipe' or customize your own? \n\n[Y] YES, I want the"
+                +" Perfect Recipe. \n[N] NO, I want to make my own.\n");
             string option = Console.ReadLine().ToUpper();
             return option;
         }
@@ -51,13 +52,19 @@ namespace LemonadeStand //buy, sell
             switch (option)
             {
                 case "Y":
-                    Console.WriteLine("");
-                    break;
+                    CreatePitcherOfLemonade();
+                        break;
                 case "N":
-                    break;
-                default:
                     GetIngredientAmounts();
                     break;
+                default:
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("\n*** THERE WAS AN ERROR PROCESSING YOUR REQUEST. PLEASE TRY AGAIN. ***\n");
+                    Console.ResetColor();
+                    PitcherRecipeOption();
+                    break;
+
+
             }
         }
 

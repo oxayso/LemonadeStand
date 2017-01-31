@@ -20,7 +20,7 @@ namespace LemonadeStand
             Console.WriteLine("\nThe Perfect Lemonade Recipe is as follows:");
             Console.ResetColor();
             Console.WriteLine("\n-4 Ripe Lemons \n-5 Spoonfuls of Sugar \n-Served over 3 Cubes of Ice per cup \n*NOTE:* This recipe"
-                +" makes one pitcher and 10 cups");
+                +" makes one pitcher, consisting of a total of 10 cups");
         }
     }
 }
