@@ -8,7 +8,6 @@ namespace LemonadeStand
 {
    public class Cup
     {
-        string name = "Cup";
-        double price = 0.05;
+        public double price = 0.05;
     }
 }

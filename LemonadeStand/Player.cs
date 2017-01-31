@@ -15,6 +15,7 @@ namespace LemonadeStand //buy, sell
         public int cupCount;
         public double totalPrice;
         public Pitcher lemonade;
+        public double pitcherCount;
 
         public Inventory inventory = new Inventory();
         
@@ -37,6 +38,30 @@ namespace LemonadeStand //buy, sell
             Console.WriteLine("Let's Go Shopping!");
             Console.ResetColor();
         }
+
+        public string PitcherRecipeOption()
+        {
+            Console.WriteLine("Would you like to utilize the 'Perfect Lemonade Recipe' or customize your own? \n[Y] YES! \n[N] NO.\n");
+            string option = Console.ReadLine().ToUpper();
+            return option;
+        }
+
+        public void PitcherResult(string option)
+        {
+            switch (option)
+            {
+                case "Y":
+                    Console.WriteLine("");
+                    break;
+                case "N":
+                    break;
+                default:
+                    GetIngredientAmounts();
+                    break;
+            }
+        }
+
+        
         public void GetIngredientAmounts()
         {
             Console.WriteLine("How many lemons will you need?");
@@ -116,6 +141,8 @@ namespace LemonadeStand //buy, sell
 
         public void CreatePitcherOfLemonade()
         {
+            Console.WriteLine("How many pitchers would you like to make?");
+            pitcherCount = double.Parse(Console.ReadLine());
             lemonade = new Pitcher();
             lemonade.price = totalPrice;
         }
