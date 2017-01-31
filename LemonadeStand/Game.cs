@@ -86,6 +86,15 @@ namespace LemonadeStand
 
         }
 
+        public void DisplayDailyReport()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.WriteLine("\n$$ LEMONLAND DAILY FINANCIAL REPORT $$\n");
+            Console.ResetColor();
+            Console.WriteLine("Number of Glasses Sold: \nAmount of Money Earned Per Glass: \nSales Income: \nNumber of Glasses"
+                +" Made \nAmount Charged Per Glass: \nLemonade Expense: \n\nPROFIT: \n\nNEW ASSETS: \n");
+        }
+
         public void RunGame()
         {
             DisplayWelcomeMessage();
@@ -115,9 +124,15 @@ namespace LemonadeStand
             string option = playerOne.PitcherRecipeOption();
             playerOne.PitcherResult(option);
             DisplayBreakpoint();
-            playerOne.CreatePitcherOfLemonade();
-            DisplayBreakpoint();
-            playerOne.GetIngredientAmounts();            
+            //playerOne.CreatePitcherOfLemonade();
+            string amount = playerOne.GetPitcherAmount();
+            playerOne.PitcherAmount(amount);
+            //Console.ReadKey();
+            //playerOne.PrintPitcherTotal()
+            //DisplayBreakpoint();
+            //playerOne.GetIngredientAmounts();
+            //Console.ReadKey();
+            //DisplayDailyReport();
         }
     }
 }

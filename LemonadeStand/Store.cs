@@ -19,8 +19,11 @@ namespace LemonadeStand
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\nThe Perfect Lemonade Recipe is as follows:");
             Console.ResetColor();
-            Console.WriteLine("\n-4 Ripe Lemons \n-5 Spoonfuls of Sugar \n-Served over 3 Cubes of Ice per cup \n*NOTE:* This recipe"
-                +" makes one pitcher, consisting of a total of 10 cups");
+            Console.WriteLine("\n-4 Ripe Lemons @ 0.05 cents per lemon. \n-5 Spoonfuls of Sugar @ 0.03 cents per spoon. \n-Served over 3 Cubes of Ice"
+                + " per cup @ 0.01 cents per cube. "
+                + "\n*NOTE:* This recipe"
+                +" makes one pitcher, consisting of a total of 10 cups @ 0.05 cents per cup.");
         }
+
     }
 }

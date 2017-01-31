@@ -9,6 +9,7 @@ namespace LemonadeStand //buy, sell
     public class Player
     {
         public string name;
+        //public string amount;
         public int lemonCount;
         public int sugarCount;
         public int iceCount;
@@ -16,7 +17,7 @@ namespace LemonadeStand //buy, sell
         public double totalPrice;
         public Pitcher lemonade;
         public double pitcherCount;
-
+        public double pitcherTotal;
         public Inventory inventory = new Inventory();
         
         public virtual void GetPlayerName()
@@ -52,10 +53,12 @@ namespace LemonadeStand //buy, sell
             switch (option)
             {
                 case "Y":
-                    CreatePitcherOfLemonade();
+                    GetPitcherAmount();
+                    Console.ReadLine();
                         break;
                 case "N":
                     GetIngredientAmounts();
+                    Console.ReadLine();
                     break;
                 default:
                     Console.ForegroundColor = ConsoleColor.DarkRed;
@@ -71,15 +74,18 @@ namespace LemonadeStand //buy, sell
         
         public void GetIngredientAmounts()
         {
-            Console.WriteLine("How many lemons will you need?");
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.WriteLine("\nYou are now customizing your own lemonade recipe.\n");
+            Console.ResetColor();
+            Console.WriteLine("-How many lemons will you need?");
             lemonCount = int.Parse(Console.ReadLine());
-            Console.WriteLine("How many spoons of sugar would you like to use?");
+            Console.WriteLine("-How many spoons of sugar would you like to use?");
             sugarCount = int.Parse(Console.ReadLine());
-            Console.WriteLine("How many cubes of ice will you need?");
+            Console.WriteLine("-How many cubes of ice will you need?");
             iceCount = int.Parse(Console.ReadLine());
-            Console.WriteLine("How many cups do you need?");
+            Console.WriteLine("-How many cups do you need?");
             cupCount = int.Parse(Console.ReadLine());
-            Console.WriteLine("How much will you charge per cup?");
+            Console.WriteLine("-How much will you charge per cup?");
             totalPrice = double.Parse(Console.ReadLine());
         }
         public void BuyLemons()
@@ -146,13 +152,50 @@ namespace LemonadeStand //buy, sell
         }
 
 
-        public void CreatePitcherOfLemonade()
+        //public void CreatePitcherOfLemonade()
+        //{
+        //    pitcherCount = double.Parse(Console.ReadLine());
+        //    lemonade = new Pitcher();
+        //    lemonade.price = totalPrice;
+        //}       
+
+        public string GetPitcherAmount()
         {
-            Console.WriteLine("How many pitchers would you like to make?");
-            pitcherCount = double.Parse(Console.ReadLine());
-            lemonade = new Pitcher();
-            lemonade.price = totalPrice;
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.WriteLine("\n\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * "
+                + " * * * * * * * * * * *");
+            Console.ResetColor();
+            Console.WriteLine("\nGrandma would be proud. \n\nHow many pitchers would you like to make? \n\nA. [3] \nB. [6] \nC. [9]\n");
+            string amount = Console.ReadLine().ToUpper();
+            return amount;
         }
-        
+
+        public void PitcherAmount(string amount)
+        {
+            switch (amount)
+            {
+                case "A":
+                    Console.WriteLine("3 pitchers of Lemonade will you $3.45, a total of 30 cups. Would you like to continue?");
+                    break;
+                case "B":
+                    Console.WriteLine("6 pitchers of Lemonade will cost $6.90, a total of 60 cups. Would you like to continue?");
+                    break;
+                case "C":
+                    Console.WriteLine("9 pitchers of Lemonade will cost $10.35, a total of 90 cups. Would you like to continue?");
+                    break;
+                default:
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("\n*** THERE WAS AN ERROR PROCESSING YOUR REQUEST. PLEASE TRY AGAIN. ***\n");
+                    Console.ResetColor();
+                    Console.ReadLine();
+                    GetPitcherAmount();
+                    break;
+
+            }
+            
+        }
+
+
+
     }
 }
