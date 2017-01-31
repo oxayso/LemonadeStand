@@ -53,7 +53,8 @@ namespace LemonadeStand //buy, sell
             switch (option)
             {
                 case "Y":
-                    GetPitcherAmount();
+                    string amount = GetPitcherAmount();
+                    PitcherAmount(amount);
                     Console.ReadLine();
                         break;
                 case "N":
@@ -66,7 +67,6 @@ namespace LemonadeStand //buy, sell
                     Console.ResetColor();
                     PitcherRecipeOption();
                     break;
-
 
             }
         }
@@ -165,7 +165,7 @@ namespace LemonadeStand //buy, sell
             Console.WriteLine("\n\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * "
                 + " * * * * * * * * * * *");
             Console.ResetColor();
-            Console.WriteLine("\nGrandma would be proud. \n\nHow many pitchers would you like to make? \n\nA. [3] \nB. [6] \nC. [9]\n");
+            Console.WriteLine("\nGrandma would be proud. \n\nHow many pitchers would you like to make? \n\nA. [3] \nB. [6] \nC. [9] \nX. [RESTART]\n");
             string amount = Console.ReadLine().ToUpper();
             return amount;
         }
@@ -175,17 +175,26 @@ namespace LemonadeStand //buy, sell
             switch (amount)
             {
                 case "A":
-                    Console.WriteLine("3 pitchers of Lemonade will you $3.45, a total of 30 cups. Would you like to continue?");
+                    Console.WriteLine("3 pitchers of Lemonade costs $3.45, giving you a total of 30 cups.\n");
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.WriteLine("Wallet Status = $16.55");
+                    Console.ResetColor();
                     break;
                 case "B":
-                    Console.WriteLine("6 pitchers of Lemonade will cost $6.90, a total of 60 cups. Would you like to continue?");
+                    Console.WriteLine("6 pitchers of Lemonade costs $6.90, giving you a total of 60 cups.\n");
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.WriteLine("Wallet Status = $13.10");
+                    Console.ResetColor();
                     break;
                 case "C":
-                    Console.WriteLine("9 pitchers of Lemonade will cost $10.35, a total of 90 cups. Would you like to continue?");
+                    Console.WriteLine("9 pitchers of Lemonade costs $10.35, giving you a total of 90 cups.\n");
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.WriteLine("Wallet Status = $9.65");
+                    Console.ResetColor();
                     break;
-                default:
-                    Console.ForegroundColor = ConsoleColor.DarkRed;
-                    Console.WriteLine("\n*** THERE WAS AN ERROR PROCESSING YOUR REQUEST. PLEASE TRY AGAIN. ***\n");
+                case "X":
+                    Console.ForegroundColor = ConsoleColor.DarkBlue;
+                    Console.WriteLine("\n*** YOU'VE REQUESTED TO RESTART. PLEASE TRY AGAIN. ***\n");
                     Console.ResetColor();
                     Console.ReadLine();
                     GetPitcherAmount();

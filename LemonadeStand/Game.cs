@@ -79,11 +79,16 @@ namespace LemonadeStand
                     Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine("\n*** THERE WAS AN ERROR PROCESSING YOUR REQUEST. PLEASE TRY AGAIN. ***\n");
                     Console.ResetColor();
-                    GiveMoreInformation();
+                    information = GiveMoreInformation();
                     break;
 
             }
 
+        }
+
+        public void GoSellLemonade()
+        {
+            Console.WriteLine("\nIT'S TIME TO MAKE SOME MONEY! \nGET OUT THERE AND SELL SOME LEMONADE!");
         }
 
         public void DisplayDailyReport()
@@ -125,9 +130,11 @@ namespace LemonadeStand
             playerOne.PitcherResult(option);
             DisplayBreakpoint();
             //playerOne.CreatePitcherOfLemonade();
-            string amount = playerOne.GetPitcherAmount();
-            playerOne.PitcherAmount(amount);
-            //Console.ReadKey();
+            //string amount = playerOne.GetPitcherAmount();
+            //playerOne.PitcherAmount(amount);
+           // DisplayBreakpoint();
+            GoSellLemonade();
+            DisplayBreakpoint();
             //playerOne.PrintPitcherTotal()
             //DisplayBreakpoint();
             //playerOne.GetIngredientAmounts();
