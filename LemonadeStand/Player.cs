@@ -175,19 +175,19 @@ namespace LemonadeStand //buy, sell
             switch (amount)
             {
                 case "A":
-                    Console.WriteLine("3 pitchers of Lemonade costs $3.45, giving you a total of 30 cups.\n");
+                    Console.WriteLine("\n3 pitchers of Lemonade costs $3.45, giving you a total of 30 cups.\n");
                     Console.ForegroundColor = ConsoleColor.DarkGreen;
                     Console.WriteLine("Wallet Status = $16.55");
                     Console.ResetColor();
                     break;
                 case "B":
-                    Console.WriteLine("6 pitchers of Lemonade costs $6.90, giving you a total of 60 cups.\n");
+                    Console.WriteLine("\n6 pitchers of Lemonade costs $6.90, giving you a total of 60 cups.\n");
                     Console.ForegroundColor = ConsoleColor.DarkGreen;
                     Console.WriteLine("Wallet Status = $13.10");
                     Console.ResetColor();
                     break;
                 case "C":
-                    Console.WriteLine("9 pitchers of Lemonade costs $10.35, giving you a total of 90 cups.\n");
+                    Console.WriteLine("\n9 pitchers of Lemonade costs $10.35, giving you a total of 90 cups.\n");
                     Console.ForegroundColor = ConsoleColor.DarkGreen;
                     Console.WriteLine("Wallet Status = $9.65");
                     Console.ResetColor();

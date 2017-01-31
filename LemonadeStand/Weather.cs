@@ -11,7 +11,7 @@ namespace LemonadeStand
         public string weatherCondition;
 
         public string predictedWeather;
-        public void GenerateRandomWeather()
+        public void GenerateRandomWeather() // SOLID DESIGN PRNCPLE S: SINGLE RESPONSIBILITY
         {
             Random random = new Random();
             string[] weather = { "Sunny, High 80's. Perfect day for business!", "Cloudy with a chance of meatballs. :(", "High 80's, Abundant Sunshine.", "73 degrees, Sunshine & Comfortable.", "60 degrees & Sunny. Expected wind chills tonight.", "67 degrees, Partial Sunshine.", "Rain with thickening clouds... oh no!" };

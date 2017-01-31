@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    public class Game
+    public class Game // LISKOV SUB PRNCPLE IF SWAP PITCHERRECIPEOPTION & GETPITCHERAMOUNT STILL WORKS
 
     {
         public Player playerOne;
@@ -139,7 +139,8 @@ namespace LemonadeStand
             //DisplayBreakpoint();
             //playerOne.GetIngredientAmounts();
             //Console.ReadKey();
-            //DisplayDailyReport();
+            DisplayDailyReport();
+            DisplayBreakpoint();
         }
     }
 }
