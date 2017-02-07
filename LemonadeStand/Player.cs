@@ -14,6 +14,10 @@ namespace LemonadeStand //buy, sell
         public int sugarCount;
         public int iceCount;
         public int cupCount;
+        public int removeCupCount;
+        public int removeIceCount;
+        public int removeSugarCount;
+        public int removeLemonCount;
         public double totalPrice;
         public Pitcher lemonade;
         public double pitcherCount;
@@ -70,8 +74,7 @@ namespace LemonadeStand //buy, sell
 
             }
         }
-
-        
+      
         public void GetIngredientAmounts()
         {
             Console.ForegroundColor = ConsoleColor.DarkCyan;
@@ -88,6 +91,7 @@ namespace LemonadeStand //buy, sell
             Console.WriteLine("-How much will you charge per cup?");
             totalPrice = double.Parse(Console.ReadLine());
         }
+
         public void BuyLemons()
         {
             for(int i = 0; i < lemonCount; i++)
@@ -126,28 +130,26 @@ namespace LemonadeStand //buy, sell
 
         public void RemoveLemons()
         {
-            for(int i = 0; i < lemonCount; i--)
+            for(int i = 0; i < removeLemonCount; i++)
             {
-                Lemon lemon = new Lemon();
-                inventory.lemons.Remove(lemon);
+                
+                inventory.lemons.RemoveAt(i);
             }
         }
 
         public void RemoveSugar()
         {
-            for (int i = 0; i < sugarCount; i--)
+            for (int i = 0; i < removeSugarCount; i++)
             {
-                Sugar sugar = new Sugar();
-                inventory.sugars.Remove(sugar);
+                inventory.sugars.RemoveAt(i);
             }
         }
 
         public void RemoveIce()
         {
-            for (int i = 0; i < iceCount; i--)
+            for (int i = 0; i < removeIceCount; i++)
             {
-                Ice ice = new Ice();
-                inventory.ices.Remove(ice);
+                inventory.ices.RemoveAt(i);
             }
         }
 

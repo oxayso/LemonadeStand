@@ -6,19 +6,21 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    public class Game // LISKOV SUB PRNCPLE IF SWAP PITCHERRECIPEOPTION & GETPITCHERAMOUNT STILL WORKS
+    public class Game 
 
     {
         public Player playerOne;
         public Day day;
         public Wallet wallet;
         public Store store;
+        public Inventory inventory;
         public Game()
         {
             playerOne = new Player();
             day = new Day();
             wallet = new Wallet();
             store = new Store();
+            inventory = new Inventory();
         }
 
         public void DisplayWelcomeMessage()
@@ -45,9 +47,7 @@ namespace LemonadeStand
             Console.WriteLine("\nTo efficiently manage your lemonade stand, you will need to make 2 important decisions everyday: "
                 + "\n\n1.) How many glasses of lemonade to make \n(Only one batch is made every morning) "
                 + "\n\n2.) What price you are going to charge for each glass \n\nThink you're ready to begin? "
-                + "To start, you have $20.00 cash. Lucky you, your neighbor lended you some sugar, \ntherefore your cost to make lemonade "
-                + " is 10 cents per glass. "
-                + "Warning, this may change in the future.");
+                + "To start, you have $20.00 cash. GOOD LUCK!");
             Console.ResetColor();
         }
 
@@ -97,7 +97,7 @@ namespace LemonadeStand
             Console.WriteLine("\n$$ LEMONLAND DAILY FINANCIAL REPORT $$\n");
             Console.ResetColor();
             Console.WriteLine("Number of Glasses Sold: \nAmount of Money Earned Per Glass: \nSales Income: \nNumber of Glasses"
-                +" Made \nAmount Charged Per Glass: \nLemonade Expense: \n\nPROFIT: \n\nNEW ASSETS: \n");
+                +" Made: \nAmount Charged Per Glass: \nLemonade Expense: \n\nPROFIT: \n\nNEW ASSETS: \n");
         }
 
         public void RunGame()
@@ -132,15 +132,22 @@ namespace LemonadeStand
             //playerOne.CreatePitcherOfLemonade();
             //string amount = playerOne.GetPitcherAmount();
             //playerOne.PitcherAmount(amount);
-           // DisplayBreakpoint();
+            // DisplayBreakpoint();
             GoSellLemonade();
             DisplayBreakpoint();
+            Console.ReadKey();
             //playerOne.PrintPitcherTotal()
             //DisplayBreakpoint();
             //playerOne.GetIngredientAmounts();
-            //Console.ReadKey();
+            //Console.ReadKey();  
             DisplayDailyReport();
             DisplayBreakpoint();
+            Console.ReadKey();
+            inventory.DisplayCurrentInventory();
+            DisplayBreakpoint();
+            Console.ReadKey();
+           
+
         }
     }
 }

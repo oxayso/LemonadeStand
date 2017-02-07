@@ -15,6 +15,15 @@ namespace LemonadeStand
             public List<Cup> cups = new List<Cup>();
             public List<Pitcher> priceS = new List<Pitcher>();
 
+        public void DisplayCurrentInventory()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("INVENTORY STATUS: \n");
+            Console.ResetColor();
+            Console.WriteLine("Lemons: \nSugar: \nIce: \nCups: \n");
+
+        }
     }
 
 }
+
