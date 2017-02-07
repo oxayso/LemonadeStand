@@ -33,21 +33,46 @@ namespace LemonadeStand
 
         }
 
-        public void GetCurrentDay()
+        public void CurrentDay()
         {
-            for (int d = 0; d < 7; d++)
+            for (int i = 1; i < 8; i++)
             {
-                if (d == 1)
+                if (i == 1)
                 {
-                    Console.WriteLine("Monday");
+                    Console.WriteLine("Today is: Monday");
+                    break;
+                }
+                if (i == 2)
+                {
+                    Console.WriteLine("Today is: Tuesday");
+                    break;
+                }
+                if (i == 3)
+                {
+                    Console.WriteLine("Today is: Wednesday");
+                    break;
+                }
+                if (i == 4)
+                {
+                    Console.WriteLine("Today is: Thursday");
+                    break;
+                }
+                if (i == 5)
+                {
+                    Console.WriteLine("Today is: Friday");
+                    break;
+                }
+                if (i == 6)
+                {
+                    Console.WriteLine("Today is: Saturday");
+                    break;
+                }
+                else if (i == 7)
+                {
+                    Console.WriteLine("Today is: Sunday");
+                    break;
                 }
             }
         }
-
-        public void DisplayCurrentDay()
-        {
-            Console.WriteLine($"Today is day: # 1");
-        }
-
     }
 }

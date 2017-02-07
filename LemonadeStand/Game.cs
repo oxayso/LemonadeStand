@@ -114,7 +114,7 @@ namespace LemonadeStand
             DisplayBreakpoint();
             Console.ReadKey();
             day.weather.GenerateRandomWeather();
-            day.DisplayCurrentDay();
+            day.CurrentDay();
             DisplayBreakpoint();
             Console.ReadKey();
             day.DisplayCurrentWeather();
@@ -129,25 +129,15 @@ namespace LemonadeStand
             string option = playerOne.PitcherRecipeOption();
             playerOne.PitcherResult(option);
             DisplayBreakpoint();
-            //playerOne.CreatePitcherOfLemonade();
-            //string amount = playerOne.GetPitcherAmount();
-            //playerOne.PitcherAmount(amount);
-            // DisplayBreakpoint();
             GoSellLemonade();
             DisplayBreakpoint();
             Console.ReadKey();
-            //playerOne.PrintPitcherTotal()
-            //DisplayBreakpoint();
-            //playerOne.GetIngredientAmounts();
-            //Console.ReadKey();  
             DisplayDailyReport();
             DisplayBreakpoint();
             Console.ReadKey();
             inventory.DisplayCurrentInventory();
             DisplayBreakpoint();
             Console.ReadKey();
-           
-
         }
     }
 }

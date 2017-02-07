@@ -167,7 +167,7 @@ namespace LemonadeStand //buy, sell
             Console.WriteLine("\n\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * "
                 + " * * * * * * * * * * *");
             Console.ResetColor();
-            Console.WriteLine("\nGrandma would be proud. \n\nHow many pitchers would you like to make? \n\nA. [3] \nB. [6] \nC. [9] \nX. [RESTART]\n");
+            Console.WriteLine("\nGrandma would be proud. \n\nHow many pitchers would you like to make? Remember, one pitcher = 10 cups. \n\nA. [3] \nB. [6] \nC. [9] \nX. [RESTART]\n");
             string amount = Console.ReadLine().ToUpper();
             return amount;
         }
