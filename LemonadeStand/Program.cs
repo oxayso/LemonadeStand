@@ -12,6 +12,7 @@ namespace LemonadeStand
         {     
             Game game = new Game();
             game.RunGame();
+            Customer customer = new Customer();
             Console.ReadLine();           
         }
     }

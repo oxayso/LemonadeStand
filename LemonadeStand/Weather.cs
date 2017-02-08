@@ -15,21 +15,21 @@ namespace LemonadeStand
         public void GenerateRandomWeather() 
         {
             Random random = new Random();
-            string[] weather = { "Sunny, High 80's. Perfect day for business!", "Cloudy with a chance of meatballs. :(", "High 80's, Abundant Sunshine.", "73 degrees, Sunshine & Comfortable.", "60 degrees & Sunny. Expected wind chills tonight.", "67 degrees, Partial Sunshine.", "Rain with thickening clouds... oh no!" };
+            string[] weather = { "Sunny, High 80's. Perfect day for business!", "Cloudy with peaks of sunshine.", "High 80's, Abundant Sunshine.", "73 degrees, Sunshine & Comfortable.", "60 degrees & Sunny. Expected to be chilly tonight.", "67 degrees, Partial Sunshine.", "Light showers, Humid." };
             weatherCondition = weather[(random.Next(0, weather.Length))];
         }
 
         public void GeneratePredictedWeather()
         {
             Random random = new Random();
-            string[] weather = { "Sunny, Expected wind chills in the evening.", "70 degrees, Possibility for a little afternoon rain.", "High 70's, Fluffy clouds & Sun.", "Low 70's, Humid.", "77 degrees, Mostly Sunny with clear skies.", "75 degrees, Hot & Dry", "A full day of Sunshine." };
+            string[] weather = { "Sunny, Expected winds of humidity in the evening.", "70 degrees, Possibility for afternoon sprinkles.", "High 70's, Fluffy clouds & Sun.", "Low 70's, Humid.", "77 degrees, Mostly Sunny with clear skies.", "75 degrees, Hot & Dry", "A full day of Sunshine." };
             predictedWeather = weather[(random.Next(0, weather.Length))];
         }
 
         public void GenerateRandomPrice()
         {
             Random random = new Random();
-            string[] price = { "0.02¢" , "0.04¢" , "0.06¢" };
+            string[] price = { "0.04¢" , "0.03¢" , "0.05¢" };
             lemonadePrice = price[(random.Next(0, price.Length))];
         }
     }

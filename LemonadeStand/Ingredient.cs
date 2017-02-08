@@ -9,11 +9,7 @@ namespace LemonadeStand
     public class Ingredient
     {
          
-        //for (int i = 0; i<userInput; i++)
-        //    {
-            
-        //    inventory.lemons.Add(new LemonadeStand);
-        //    }
+        
 
 }
     

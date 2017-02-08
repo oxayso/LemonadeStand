@@ -6,8 +6,23 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Customer
+    public class Customer
     {
+
+        public void CustomerOne()
+        {
+
+        }
+
+        public void CustomerTwo()
+        {
+
+        }
+
+        public void CustomerThree()
+        {
+
+        }
 
     }
 }

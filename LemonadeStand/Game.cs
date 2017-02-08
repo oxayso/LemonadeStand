@@ -36,16 +36,16 @@ namespace LemonadeStand
         public void DisplayBreakpoint()
         {
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
-            Console.WriteLine("\n\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * "
-                + " * * * * * * * * * * *");
+            Console.WriteLine("\n\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * "
+                +"* * * * * * * * * * * * * * *");
             Console.ResetColor();
         }
 
         public void DisplayRules()
         {
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.WriteLine("\nTo efficiently manage your lemonade stand, you will need to make 2 important decisions everyday: "
-                + "\n\n1.) How many glasses of lemonade to make \n(Only one batch is made every morning) "
+            Console.WriteLine("\nTo efficiently manage your lemonade stand, you will need to make 2 important decisions "
+                +"everyday: \n\n1.) How many glasses of lemonade to make \n(Only one batch is made every morning) "
                 + "\n\n2.) What price you are going to charge for each glass \n\nThink you're ready to begin? "
                 + "To start, you have $20.00 cash. GOOD LUCK!");
             Console.ResetColor();
@@ -85,6 +85,16 @@ namespace LemonadeStand
 
         }
 
+        public void MakingLemonade()
+        {
+            Console.WriteLine("\n. . . . MAKING LEMONADE . . . .");
+            Console.WriteLine("\n▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄ "
+            +"[_]P");
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("\n100% COMPLETE");
+            Console.ResetColor(); 
+        }
+
         public void GoSellLemonade()
         {
             Console.WriteLine("\nIT'S TIME TO MAKE SOME MONEY! \nGET OUT THERE AND SELL SOME LEMONADE!");
@@ -95,9 +105,9 @@ namespace LemonadeStand
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("\n$$ LEMONLAND DAILY FINANCIAL REPORT $$\n");
             Console.ResetColor();
-            Console.WriteLine($"\nPROFIT: {wallet.dailyProfit}");
-            Console.WriteLine($"LOSS: {wallet.dailyLoss}");
-            Console.WriteLine($"TOTAL PROFIT: {wallet.dailyProfit}"); 
+            //Console.WriteLine($"\nPROFIT: {wallet.dailyProfit}");
+            //Console.WriteLine($"LOSS: {wallet.dailyLoss}");
+            //Console.WriteLine($"TOTAL ASSETS: {wallet.dailyProfit}"); 
         }
 
         
@@ -132,11 +142,14 @@ namespace LemonadeStand
             string option = playerOne.PitcherRecipeOption();
             playerOne.PitcherResult(option);
             DisplayBreakpoint();
+            MakingLemonade();
+            DisplayBreakpoint();
+            Console.ReadKey();
             GoSellLemonade();
             DisplayBreakpoint();
             Console.ReadKey();
-            wallet.GenerateProfit();
-            wallet.GenerateLoss();
+            //wallet.GenerateProfit();
+            //wallet.GenerateLoss();
             DisplayDailyReport();           
             DisplayBreakpoint();
             Console.ReadKey();

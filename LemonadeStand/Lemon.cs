@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    public class Lemon
+       public class Lemon
     {
-       public double price = 0.05;
+       //public Wallet wallet = new Wallet();
+       //public double playerWallet = 20; 
+       public double lemonPrice = 0.05;
     }
+
 }

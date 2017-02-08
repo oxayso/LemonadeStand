@@ -46,8 +46,8 @@ namespace LemonadeStand
 
         public string PitcherRecipeOption()
         {
-            Console.WriteLine("Would you like to utilize the 'Perfect Lemonade Recipe' or customize your own? \n\n[Y] YES, I want the"
-                +" Perfect Recipe. \n[N] NO, I want to make my own.\n");
+            Console.WriteLine("Would you like to utilize the 'Perfect Lemonade Recipe' or customize your own? \n\n[Y] YES, "
+                +"I want the Perfect Recipe. \n[N] NO, I want to make my own.\n");
             string option = Console.ReadLine().ToUpper();
             return option;
         }
@@ -99,7 +99,7 @@ namespace LemonadeStand
 
         public void BuyLemons()
         {
-            for(int i = 0; i < lemonCount; i++)
+            for (int i = 0; i < lemonCount; i++)
             {
                 Lemon lemon = new Lemon();
                 inventory.lemons.Add(lemon);
@@ -169,10 +169,11 @@ namespace LemonadeStand
         public string GetPitcherAmount()
         {
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
-            Console.WriteLine("\n\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * "
-                + " * * * * * * * * * * *");
+            Console.WriteLine("\n\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * "
+                +"* * * * * * * * * * * * * * *");
             Console.ResetColor();
-            Console.WriteLine("\nGrandma would be proud. \n\nHow many pitchers would you like to make? Remember, one pitcher = 10 cups. \n\nA. [3] \nB. [6] \nC. [9] \nX. [RESTART]\n");
+            Console.WriteLine("\nGrandma would be proud. \n\nHow many pitchers would you like to make? Remember, one pitcher "
+                +"= 10 cups. \n\nA. [3] \nB. [6] \nC. [9] \nX. [RESTART]\n");
             string amount = Console.ReadLine().ToUpper();
             return amount;
         }
