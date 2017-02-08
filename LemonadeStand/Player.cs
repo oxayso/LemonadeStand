@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LemonadeStand //buy, sell
+namespace LemonadeStand 
 {
     public class Player
     {
@@ -19,9 +19,9 @@ namespace LemonadeStand //buy, sell
         public int removeSugarCount;
         public int removeLemonCount;
         public double totalPrice;
-        public Pitcher lemonade;
-        public double pitcherCount;
-        public double pitcherTotal;
+        //public Pitcher lemonade;
+        //public double pitcherCount;
+        //public double pitcherTotal;
         public Inventory inventory = new Inventory();
         
         public virtual void GetPlayerName()
@@ -80,7 +80,7 @@ namespace LemonadeStand //buy, sell
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("\nYou are now customizing your own lemonade recipe.\n");
             Console.ResetColor();
-            Console.WriteLine("-How many lemons will you need? 0.05¢");
+            Console.WriteLine("-How many lemons will you need? 0.05¢ ");
             lemonCount = int.Parse(Console.ReadLine());
             Console.ReadKey();
             Console.WriteLine("-How many spoons of sugar would you like to use? 0.03¢");

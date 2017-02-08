@@ -29,7 +29,7 @@ namespace LemonadeStand
         public void GenerateRandomPrice()
         {
             Random random = new Random();
-            string[] price = { "0.02¢" , "0.04¢" , "0.06¢" , "0.08¢" };
+            string[] price = { "0.02¢" , "0.04¢" , "0.06¢" };
             lemonadePrice = price[(random.Next(0, price.Length))];
         }
     }

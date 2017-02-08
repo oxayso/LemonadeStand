@@ -95,8 +95,12 @@ namespace LemonadeStand
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("\n$$ LEMONLAND DAILY FINANCIAL REPORT $$\n");
             Console.ResetColor();
-            Console.WriteLine("\nPROFIT: \nLOSS: \nTOTAL PROFIT: \n");
+            Console.WriteLine($"\nPROFIT: {wallet.dailyProfit}");
+            Console.WriteLine($"LOSS: {wallet.dailyLoss}");
+            Console.WriteLine($"TOTAL PROFIT: {wallet.dailyProfit}"); 
         }
+
+        
 
         public void RunGame()
         {
@@ -131,7 +135,9 @@ namespace LemonadeStand
             GoSellLemonade();
             DisplayBreakpoint();
             Console.ReadKey();
-            DisplayDailyReport();
+            wallet.GenerateProfit();
+            wallet.GenerateLoss();
+            DisplayDailyReport();           
             DisplayBreakpoint();
             Console.ReadKey();
             //inventory.DisplayCurrentInventory();

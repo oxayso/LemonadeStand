@@ -31,6 +31,7 @@ namespace LemonadeStand
             Console.WriteLine($"\n\nThe predicted weather for tomorrow is: {weather.predictedWeather}");
 
         }
+
         public void DisplayCurrentDay()
         {
             for (int i = 1; i < 8; i++)

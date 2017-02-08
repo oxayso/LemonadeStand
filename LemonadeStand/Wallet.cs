@@ -8,6 +8,8 @@ namespace LemonadeStand
 {
     public class Wallet
     {
+        public string dailyProfit;
+        public string dailyLoss;
         public void DisplayMakeLemonade()
         {
             Console.ForegroundColor = ConsoleColor.DarkCyan;
@@ -18,8 +20,18 @@ namespace LemonadeStand
             Console.ResetColor();
         }
 
-        //public void CalculateWallet();
+        public void GenerateProfit()
+        {
+            Random random = new Random();
+            string[] profit = { "$2.00", "$3.50", "$4.00", "$5.00" };
+            dailyProfit = profit[(random.Next(0, profit.Length))];
+        }
 
-
+        public void GenerateLoss()
+        {
+            Random random = new Random();
+            string[] loss = { "$ -3.50", "$ -2.00", "$ -5.00", "$ -4.00" };
+            dailyLoss = loss[(random.Next(0, loss.Length))];
+        }
     }
 }
