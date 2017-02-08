@@ -16,15 +16,14 @@ namespace LemonadeStand
             weather = new Weather();
         }
 
-        //public string currentDay;
-
-
         public void DisplayCurrentWeather()
         {
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("\nDAILY WEATHER REPORT\n");
             Console.ResetColor();
             Console.WriteLine($"The weather today is: {weather.weatherCondition}");
+            Console.WriteLine($"\nGiven, the price for lemonade today is: {weather.lemonadePrice}");
+
         }
 
         public void DisplayPredictedWeather()
@@ -32,43 +31,63 @@ namespace LemonadeStand
             Console.WriteLine($"\n\nThe predicted weather for tomorrow is: {weather.predictedWeather}");
 
         }
-
-        public void CurrentDay()
+        public void DisplayCurrentDay()
         {
             for (int i = 1; i < 8; i++)
             {
                 if (i == 1)
                 {
-                    Console.WriteLine("Today is: Monday");
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    Console.WriteLine("CURRENT DAY\n");
+                    Console.ResetColor();
+                    Console.WriteLine($"Today is: Monday");
                     break;
                 }
                 if (i == 2)
                 {
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    Console.WriteLine("CURRENT DAY\n");
+                    Console.ResetColor();
                     Console.WriteLine("Today is: Tuesday");
                     break;
                 }
                 if (i == 3)
                 {
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    Console.WriteLine("CURRENT DAY\n");
+                    Console.ResetColor();
                     Console.WriteLine("Today is: Wednesday");
                     break;
                 }
                 if (i == 4)
                 {
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    Console.WriteLine("CURRENT DAY\n");
+                    Console.ResetColor();
                     Console.WriteLine("Today is: Thursday");
                     break;
                 }
                 if (i == 5)
                 {
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    Console.WriteLine("CURRENT DAY\n");
+                    Console.ResetColor();
                     Console.WriteLine("Today is: Friday");
                     break;
                 }
                 if (i == 6)
                 {
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    Console.WriteLine("CURRENT DAY\n");
+                    Console.ResetColor();
                     Console.WriteLine("Today is: Saturday");
                     break;
                 }
                 else if (i == 7)
                 {
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    Console.WriteLine("CURRENT DAY\n");
+                    Console.ResetColor();
                     Console.WriteLine("Today is: Sunday");
                     break;
                 }

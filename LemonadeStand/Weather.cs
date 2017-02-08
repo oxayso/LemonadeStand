@@ -9,8 +9,9 @@ namespace LemonadeStand
     public class Weather
     {
         public string weatherCondition;
-
+        public string lemonadePrice;
         public string predictedWeather;
+
         public void GenerateRandomWeather() 
         {
             Random random = new Random();
@@ -23,6 +24,13 @@ namespace LemonadeStand
             Random random = new Random();
             string[] weather = { "Sunny, Expected wind chills in the evening.", "70 degrees, Possibility for a little afternoon rain.", "High 70's, Fluffy clouds & Sun.", "Low 70's, Humid.", "77 degrees, Mostly Sunny with clear skies.", "75 degrees, Hot & Dry", "A full day of Sunshine." };
             predictedWeather = weather[(random.Next(0, weather.Length))];
+        }
+
+        public void GenerateRandomPrice()
+        {
+            Random random = new Random();
+            string[] price = { "0.02¢" , "0.04¢" , "0.06¢" , "0.08¢" };
+            lemonadePrice = price[(random.Next(0, price.Length))];
         }
     }
 }

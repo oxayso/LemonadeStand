@@ -80,16 +80,21 @@ namespace LemonadeStand //buy, sell
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("\nYou are now customizing your own lemonade recipe.\n");
             Console.ResetColor();
-            Console.WriteLine("-How many lemons will you need?");
+            Console.WriteLine("-How many lemons will you need? 0.05¢");
             lemonCount = int.Parse(Console.ReadLine());
-            Console.WriteLine("-How many spoons of sugar would you like to use?");
+            Console.ReadKey();
+            Console.WriteLine("-How many spoons of sugar would you like to use? 0.03¢");
             sugarCount = int.Parse(Console.ReadLine());
-            Console.WriteLine("-How many cubes of ice will you need?");
+            Console.ReadKey();
+            Console.WriteLine("-How many cubes of ice will you need? 0.01¢");
             iceCount = int.Parse(Console.ReadLine());
-            Console.WriteLine("-How many cups do you need?");
+            Console.ReadKey();
+            Console.WriteLine("-How many cups do you need? 0.05¢");
             cupCount = int.Parse(Console.ReadLine());
+            Console.ReadKey();
             Console.WriteLine("-How much will you charge per cup?");
             totalPrice = double.Parse(Console.ReadLine());
+            Console.ReadKey();
         }
 
         public void BuyLemons()

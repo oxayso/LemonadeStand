@@ -81,7 +81,6 @@ namespace LemonadeStand
                     Console.ResetColor();
                     information = GiveMoreInformation();
                     break;
-
             }
 
         }
@@ -96,8 +95,7 @@ namespace LemonadeStand
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("\n$$ LEMONLAND DAILY FINANCIAL REPORT $$\n");
             Console.ResetColor();
-            Console.WriteLine("Number of Glasses Sold: \nAmount of Money Earned Per Glass: \nSales Income: \nNumber of Glasses"
-                +" Made: \nAmount Charged Per Glass: \nLemonade Expense: \n\nPROFIT: \n\nNEW ASSETS: \n");
+            Console.WriteLine("\nPROFIT: \nLOSS: \nTOTAL PROFIT: \n");
         }
 
         public void RunGame()
@@ -114,7 +112,8 @@ namespace LemonadeStand
             DisplayBreakpoint();
             Console.ReadKey();
             day.weather.GenerateRandomWeather();
-            day.CurrentDay();
+            day.DisplayCurrentDay();
+            day.weather.GenerateRandomPrice();
             DisplayBreakpoint();
             Console.ReadKey();
             day.DisplayCurrentWeather();
@@ -135,9 +134,9 @@ namespace LemonadeStand
             DisplayDailyReport();
             DisplayBreakpoint();
             Console.ReadKey();
-            inventory.DisplayCurrentInventory();
-            DisplayBreakpoint();
-            Console.ReadKey();
+            //inventory.DisplayCurrentInventory();
+            //DisplayBreakpoint();
+            //Console.ReadKey();
         }
     }
 }
