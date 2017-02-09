@@ -26,11 +26,5 @@ namespace LemonadeStand
                 + "\n-Served over 3 Cubes of Ice per cup @ 0.01 cents per cube. "
                 + "\n*NOTE:* This recipe makes one pitcher, consisting of a total of 10 cups.");
         }
-
-        public void BuyLemons(Customer customer)
-        {
-
-        }
-
     }
 }

@@ -103,11 +103,17 @@ namespace LemonadeStand
         public void DisplayDailyReport()
         {
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.WriteLine("\n$$ LEMONLAND DAILY FINANCIAL REPORT $$\n");
+            Console.WriteLine("\n$$ YOUR DAILY FINANCIAL REPORT $$\n");
             Console.ResetColor();
             Console.WriteLine($"\nPROFIT: {wallet.dailyProfit}");
             Console.WriteLine($"LOSS: {wallet.dailyLoss}");
             Console.WriteLine($"TOTAL ASSETS: {wallet.dailyProfit}");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\nTHANKS FOR VISITING LEMONLAND!");
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine("\nPRESS [ENTER] TWICE TO EXIT.");
+            Console.ResetColor();
         }
 
 

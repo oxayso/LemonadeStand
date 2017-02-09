@@ -18,7 +18,6 @@ namespace LemonadeStand
         public int removeIceCount;
         public int removeSugarCount;
         public int removeLemonCount;
-        public double totalPrice;
         //public Pitcher lemonade;
         //public double pitcherCount;
         //public double pitcherTotal;
@@ -46,7 +45,7 @@ namespace LemonadeStand
 
         public string PitcherRecipeOption()
         {
-            Console.WriteLine("Would you like to utilize the 'Perfect Lemonade Recipe' or customize your own? \n\n[Y] YES, "
+            Console.WriteLine("\nWould you like to utilize the 'Perfect Lemonade Recipe' or customize your own? \n\n[Y] YES, "
                 +"I want the Perfect Recipe. \n[N] NO, I want to make my own.\n");
             string option = Console.ReadLine().ToUpper();
             return option;
@@ -62,7 +61,7 @@ namespace LemonadeStand
                     Console.ReadLine();
                         break;
                 case "N":
-                    GetIngredientAmounts();
+                    CustomizeLemonade();
                     Console.ReadLine();
                     break;
                 default:
@@ -75,26 +74,24 @@ namespace LemonadeStand
             }
         }
       
-        public void GetIngredientAmounts()
+        public Pitcher CustomizeLemonade()
         {
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("\nYou are now customizing your own lemonade recipe.\n");
             Console.ResetColor();
             Console.WriteLine("-How many lemons will you need? 0.05¢ ");
             lemonCount = int.Parse(Console.ReadLine());
-            Console.ReadKey();
             Console.WriteLine("-How many spoons of sugar would you like to use? 0.03¢");
             sugarCount = int.Parse(Console.ReadLine());
-            Console.ReadKey();
             Console.WriteLine("-How many cubes of ice will you need? 0.01¢");
             iceCount = int.Parse(Console.ReadLine());
-            Console.ReadKey();
             Console.WriteLine("-How many cups do you need? 0.05¢");
             cupCount = int.Parse(Console.ReadLine());
-            Console.ReadKey();
-            Console.WriteLine("-How much will you charge per cup?");
-            totalPrice = double.Parse(Console.ReadLine());
-            Console.ReadKey();
+            Console.WriteLine($"\nYour Recipe:\n\nLemons: {lemonCount} \nSpoons of Sugar: {sugarCount} \nIce Cubes: {iceCount} \nCups to be Made: {cupCount}");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\nPress [ENTER] to Continue");
+            Console.ResetColor();
+            return new Pitcher(lemonCount, sugarCount, iceCount, cupCount);         
         }
 
         public void BuyLemons()
