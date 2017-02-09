@@ -8,9 +8,9 @@ namespace LemonadeStand
 {
     public class Wallet
     {
-        public double customerMoney = 20;
-        //public string dailyProfit;
-        //public string dailyLoss;
+        public double money = 20;
+        public string dailyProfit;
+        public string dailyLoss;
         public void DisplayMakeLemonade()
         {
             Console.ForegroundColor = ConsoleColor.DarkCyan;
@@ -21,18 +21,18 @@ namespace LemonadeStand
             Console.ResetColor();
         }
 
-        //public void GenerateProfit()
-        //{
-        //    Random random = new Random();
-        //    string[] profit = { "$1.15", "$2.35", "$3.00", "$4.10" };
-        //    dailyProfit = profit[(random.Next(0, profit.Length))];
-        //}
+        public void GenerateProfit()
+        {
+            Random random = new Random();
+            string[] profit = { "$1.15", "$2.35", "$3.00", "$4.10" };
+            dailyProfit = profit[(random.Next(0, profit.Length))];
+        }
 
-        //public void GenerateLoss()
-        //{
-        //    Random random = new Random();
-        //    string[] loss = { "$ -2.20", "$ -1.13", "$ -3.10" };
-        //    dailyLoss = loss[(random.Next(0, loss.Length))];
-        //}
+        public void GenerateLoss()
+        {
+            Random random = new Random();
+            string[] loss = { "$ -2.20", "$ -1.13", "$ -3.10" };
+            dailyLoss = loss[(random.Next(0, loss.Length))];
+        }
     }
 }
