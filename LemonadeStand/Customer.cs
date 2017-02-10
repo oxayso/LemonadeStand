@@ -8,20 +8,9 @@ namespace LemonadeStand
 {
     public class Customer
     {
-
-        public void CustomerOne()
+        public void BuyIngredients(Customer one)
         {
-
-        }
-
-        public void CustomerTwo()
-        {
-
-        }
-
-        public void CustomerThree()
-        {
-
+            
         }
 
     }

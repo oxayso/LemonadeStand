@@ -9,7 +9,6 @@ namespace LemonadeStand
     public class Player
     {
         public string name;
-        //public string amount;
         public int lemonCount;
         public int sugarCount;
         public int iceCount;
@@ -18,9 +17,7 @@ namespace LemonadeStand
         public int removeIceCount;
         public int removeSugarCount;
         public int removeLemonCount;
-        //public Pitcher lemonade;
-        //public double pitcherCount;
-        //public double pitcherTotal;
+        public Wallet wallet = new Wallet();
         public Inventory inventory = new Inventory();
         
         public virtual void GetPlayerName()
@@ -32,7 +29,7 @@ namespace LemonadeStand
         public void PrintPlayerName()
         {
             Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.WriteLine($"\n{name}, get ready to make some money! ... or prepare to lose some.");
+            Console.WriteLine($"\n{name}, get ready to make some money! ... or prepare to go bankrupt.");
             Console.ResetColor();
         }
 
@@ -70,13 +67,12 @@ namespace LemonadeStand
                     Console.ResetColor();
                     PitcherRecipeOption();
                     break;
-
             }
         }
       
         public Pitcher CustomizeLemonade()
         {
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("\nYou are now customizing your own lemonade recipe.\n");
             Console.ResetColor();
             Console.WriteLine("-How many lemons will you need? 0.05¢ ");
@@ -87,11 +83,18 @@ namespace LemonadeStand
             iceCount = int.Parse(Console.ReadLine());
             Console.WriteLine("-How many cups do you need? 0.05¢");
             cupCount = int.Parse(Console.ReadLine());
-            Console.WriteLine($"\nYour Recipe:\n\nLemons: {lemonCount} \nSpoons of Sugar: {sugarCount} \nIce Cubes: {iceCount} \nCups to be Made: {cupCount}");
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine($"\n{name}'s Recipe:\n\nLemons: {lemonCount} \nSpoons of Sugar: {sugarCount} \nIce Cubes: {iceCount} "
+                +$"\nCups: {cupCount} \n");
+            Console.WriteLine($"\nCash: ${wallet.money}.00");
+            Console.WriteLine($"Change: ${wallet.money - wallet.pitcherChange}"); 
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine($"\nWallet Status = ");
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("\nPress [ENTER] to Continue");
             Console.ResetColor();
-            return new Pitcher(lemonCount, sugarCount, iceCount, cupCount);         
+            return new Pitcher(lemonCount, sugarCount, iceCount, cupCount);
+                  
         }
 
         public void BuyLemons()
@@ -99,7 +102,7 @@ namespace LemonadeStand
             for (int i = 0; i < lemonCount; i++)
             {
                 Lemon lemon = new Lemon();
-                inventory.lemons.Add(lemon);
+                inventory.lemon.Add(lemon);
             }
         }
 
@@ -108,7 +111,7 @@ namespace LemonadeStand
             for(int i = 0; i < sugarCount; i++)
             {
                 Sugar sugar = new Sugar();
-                inventory.sugars.Add(sugar);
+                inventory.sugar.Add(sugar);
             }
         }
 
@@ -117,7 +120,7 @@ namespace LemonadeStand
             for(int i = 0; i < iceCount; i++)
             {
                 Ice ice = new Ice();
-                inventory.ices.Add(ice);
+                inventory.ice.Add(ice);
             }
         }
 
@@ -126,7 +129,7 @@ namespace LemonadeStand
             for(int i = 0; i < cupCount; i++)
             {
                 Cup cup = new Cup();
-                inventory.cups.Add(cup);
+                inventory.cup.Add(cup);
             }
         }
 
@@ -135,7 +138,7 @@ namespace LemonadeStand
             for(int i = 0; i < removeLemonCount; i++)
             {
                 
-                inventory.lemons.RemoveAt(i);
+                inventory.lemon.RemoveAt(i);
             }
         }
 
@@ -143,7 +146,7 @@ namespace LemonadeStand
         {
             for (int i = 0; i < removeSugarCount; i++)
             {
-                inventory.sugars.RemoveAt(i);
+                inventory.sugar.RemoveAt(i);
             }
         }
 
@@ -151,17 +154,9 @@ namespace LemonadeStand
         {
             for (int i = 0; i < removeIceCount; i++)
             {
-                inventory.ices.RemoveAt(i);
+                inventory.ice.RemoveAt(i);
             }
         }
-
-
-        //public void CreatePitcherOfLemonade()
-        //{
-        //    pitcherCount = double.Parse(Console.ReadLine());
-        //    lemonade = new Pitcher();
-        //    lemonade.price = totalPrice;
-        //}       
 
         public string GetPitcherAmount()
         {
@@ -208,8 +203,6 @@ namespace LemonadeStand
             }
             
         }
-
-
 
     }
 }

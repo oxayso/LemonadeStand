@@ -22,12 +22,8 @@ namespace LemonadeStand
             this.cupCount = cupCount;
 
         }
-        //public double price = 4 * 0.05 + 5 * 0.03 + 30 * 0.01 + 10 * 0.05;
-        //public double lemonCount = 4;
-        //public double sugarCount = 5;
-        //public double iceCount = 30;
-        //public double cupCount = 10;
 
+        //one pitcher = 4 lemons, 5 sugar, 30 ice, = 10 cups
 
     }
 

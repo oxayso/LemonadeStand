@@ -12,9 +12,6 @@ namespace LemonadeStand
         {     
             Game game = new Game();
             game.RunGame();
-            Customer customer = new Customer();
-            Player player = new Player();
-            Pitcher lemonade = player.CustomizeLemonade();
             Console.ReadLine();           
         }
     }

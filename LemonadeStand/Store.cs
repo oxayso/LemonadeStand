@@ -8,11 +8,32 @@ namespace LemonadeStand
 {
     public class Store
     {
-        public int lemonPrice;
-        public int sugarPrice;
-        public int icePrice;
-        public int cupPrice;
+        public Inventory inventory;
+        public double lemonPrice;
+        public double sugarPrice;
+        public double icePrice;
+        public double cupPrice;
         public double customerWallet;
+
+        public Store()
+        {
+            inventory = new Inventory();
+        }
+
+        public void AddLemon(Lemon lemon)
+        {
+            inventory.lemon.Add(lemon);
+        }
+
+        public void AddSugar(Sugar sugar)
+        {
+            inventory.sugar.Add(sugar);
+        }
+
+        public void AddIce(Ice ice)
+        {
+            inventory.ice.Add(ice);
+        }
 
         public void GoToStore()
         {
@@ -20,11 +41,11 @@ namespace LemonadeStand
             + " Your supplies are dependent on the weather, and you cannot spend what you \ndon't have! For your guidance, "
             + "here is Grandma's special recipe.");
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("\nThe Perfect Lemonade Recipe:");
+            Console.WriteLine("\nGrandma's Lemonade Recipe:");
             Console.ResetColor();
-            Console.WriteLine("\n-4 Ripe Lemons @ 0.05 cents per lemon. \n-5 Spoonfuls of Sugar @ 0.03 cents per spoon. "
-                + "\n-Served over 3 Cubes of Ice per cup @ 0.01 cents per cube. "
-                + "\n*NOTE:* This recipe makes one pitcher, consisting of a total of 10 cups.");
+            Console.WriteLine("\n-4 Ripe Lemons @ 0.05¢ per lemon. \n-5 Spoonfuls of Sugar @ 0.03¢ per spoon. "
+                + "\n-Served over 3 Cubes of Ice per cup @ 0.01¢ per cube. (30 cubes total)"
+                + "\n*NOTE:* This recipe makes one pitcher, consisting of a total of 10 8oz cups.");
         }
     }
 }

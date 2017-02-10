@@ -44,10 +44,10 @@ namespace LemonadeStand
         public void DisplayRules()
         {
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.WriteLine("\nTo efficiently manage your lemonade stand, you will need to make 2 important decisions "
-                +"everyday: \n\n1.) How many glasses of lemonade to make \n(Only one batch is made every morning) "
-                + "\n\n2.) What price you are going to charge for each glass \n\nThink you're ready to begin? "
-                + "To start, you have $20.00 cash. GOOD LUCK!");
+            Console.WriteLine("\nTo efficiently manage your lemonade stand, you will need to keep careful consideration of "
+                +"how many glasses of lemonade \nto make. (Only one pitcher is made every morning) "
+                + "\n\nSimple enough, right? "
+                + $"To start, I am lending you ${wallet.money}.00 cash. GOOD LUCK!");
             Console.ResetColor();
         }
 
@@ -105,14 +105,15 @@ namespace LemonadeStand
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("\n$$ YOUR DAILY FINANCIAL REPORT $$\n");
             Console.ResetColor();
-            Console.WriteLine($"\nPROFIT: {wallet.dailyProfit}");
-            Console.WriteLine($"LOSS: {wallet.dailyLoss}");
-            Console.WriteLine($"TOTAL ASSETS: {wallet.dailyProfit}");
+            Console.WriteLine($"\nPROFIT:");
+            Console.WriteLine($"LOSS:");
+            Console.WriteLine($"TOTAL EXPENSES: {wallet.expense}");
+            Console.WriteLine($"WALLET STATUS:");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\nTHANKS FOR VISITING LEMONLAND!");
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine("\nPRESS [ENTER] TWICE TO EXIT.");
+            Console.WriteLine("\nPRESS [ENTER] TO LEAVE.");
             Console.ResetColor();
         }
 
@@ -154,14 +155,10 @@ namespace LemonadeStand
             GoSellLemonade();
             DisplayBreakpoint();
             Console.ReadKey();
-            wallet.GenerateProfit();
-            wallet.GenerateLoss();
+            //wallet.GenerateProfit();
+            //wallet.GenerateLoss();
             DisplayDailyReport();           
             DisplayBreakpoint();
-            Console.ReadKey();
-            //inventory.DisplayCurrentInventory();
-            //DisplayBreakpoint();
-            //Console.ReadKey();
         }
     }
 }

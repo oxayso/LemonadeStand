@@ -45,7 +45,7 @@ namespace LemonadeStandUnitTest
             //Act
             player.BuyLemons();
             //Assert
-            Assert.AreEqual(player.lemonCount, player.inventory.lemons.Count);
+            Assert.AreEqual(player.lemonCount, player.inventory.lemon.Count);
         }
 
         [TestMethod]
@@ -58,7 +58,7 @@ namespace LemonadeStandUnitTest
             //Act
             player.BuySugar();
             //Assert
-            Assert.AreEqual(player.sugarCount, player.inventory.sugars.Count);
+            Assert.AreEqual(player.sugarCount, player.inventory.sugar.Count);
         }
 
         [TestMethod]
@@ -71,7 +71,7 @@ namespace LemonadeStandUnitTest
             //Act
             player.BuyIce();
             //Assert
-            Assert.AreEqual(player.iceCount, player.inventory.ices.Count);
+            Assert.AreEqual(player.iceCount, player.inventory.ice.Count);
         }
 
         [TestMethod]
@@ -84,7 +84,7 @@ namespace LemonadeStandUnitTest
             //Act
             player.BuyCups();
             //Assert
-            Assert.AreEqual(player.cupCount, player.inventory.cups.Count);
+            Assert.AreEqual(player.cupCount, player.inventory.cup.Count);
         }
 
         [TestMethod]
@@ -94,13 +94,13 @@ namespace LemonadeStandUnitTest
             Player player = new Player();
             Lemon lemon = new Lemon();
             //Arrange
-            player.inventory.lemons.Add(lemon);
-            player.inventory.lemons.Add(lemon);
+            player.inventory.lemon.Add(lemon);
+            player.inventory.lemon.Add(lemon);
             player.removeLemonCount = 1;
             //Act
             player.RemoveLemons();
             //Assert
-            Assert.AreEqual(1, player.inventory.lemons.Count);
+            Assert.AreEqual(1, player.inventory.lemon.Count);
             
         }
        
@@ -111,14 +111,14 @@ namespace LemonadeStandUnitTest
             Player player = new Player();
             Sugar sugar = new Sugar();
             //Arrange
-            player.inventory.sugars.Add(sugar);
-            player.inventory.sugars.Add(sugar);
-            player.inventory.sugars.Add(sugar);
+            player.inventory.sugar.Add(sugar);
+            player.inventory.sugar.Add(sugar);
+            player.inventory.sugar.Add(sugar);
             player.removeSugarCount = 2;
             //Act
             player.RemoveSugar();
             //Assert
-            Assert.AreEqual(1, player.inventory.sugars.Count);
+            Assert.AreEqual(1, player.inventory.sugar.Count);
         }
 
         [TestMethod]
@@ -128,14 +128,14 @@ namespace LemonadeStandUnitTest
             Player player = new Player();
             Ice ice = new Ice();
             //Arrange
-            player.inventory.ices.Add(ice);
-            player.inventory.ices.Add(ice);
-            player.inventory.ices.Add(ice);
+            player.inventory.ice.Add(ice);
+            player.inventory.ice.Add(ice);
+            player.inventory.ice.Add(ice);
             player.removeIceCount = 1;
             //Act
             player.RemoveIce();
             //Assert
-            Assert.AreEqual(2, player.inventory.ices.Count);
+            Assert.AreEqual(2, player.inventory.ice.Count);
         }
     }
 

@@ -22,14 +22,12 @@ namespace LemonadeStand
             Console.WriteLine("\nDAILY WEATHER REPORT\n");
             Console.ResetColor();
             Console.WriteLine($"The weather today is: {weather.weatherCondition}");
-            Console.WriteLine($"\nGiven, the price for lemonade today is: {weather.lemonadePrice}");
-
+            Console.WriteLine($"\nGiven the weather, the price for lemonade today is: {weather.lemonadePrice}");
         }
 
         public void DisplayPredictedWeather()
         {
-            Console.WriteLine($"\n\nThe predicted weather for tomorrow is: {weather.predictedWeather}");
-
+            Console.WriteLine($"\nThe predicted weather for tomorrow is: {weather.predictedWeather}");
         }
 
         public void DisplayCurrentDay()
@@ -39,7 +37,7 @@ namespace LemonadeStand
                 if (i == 1)
                 {
                     Console.ForegroundColor = ConsoleColor.DarkGray;
-                    Console.WriteLine("CURRENT DAY\n");
+                    Console.WriteLine("\nCURRENT DAY\n");
                     Console.ResetColor();
                     Console.WriteLine($"Today is: Monday");
                     break;
