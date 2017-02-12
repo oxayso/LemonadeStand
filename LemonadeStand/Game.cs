@@ -14,6 +14,7 @@ namespace LemonadeStand
         public Wallet wallet;
         public Store store;
         public Inventory inventory;
+        public int daysToPlay = 7;
         public Game()
         {
             playerOne = new Player();
@@ -136,34 +137,38 @@ namespace LemonadeStand
         }
         public void StartDay()
         {
-            day.AddDay();
-            day.DisplayCurrentDay();
-            day.weather.GenerateRandomWeather();
-            DisplayBreakpoint();
-            Console.ReadKey();
-            day.DisplayCurrentWeather();
-            day.weather.GeneratePredictedWeather();
-            day.DisplayPredictedWeather();
-            DisplayBreakpoint();
-            Console.ReadKey();
-            wallet.DisplayMakeLemonade();
-            DisplayBreakpoint();
-            store.GoToStore();
-            DisplayBreakpoint();
-            string option = playerOne.PitcherRecipeOption();
-            playerOne.PitcherResult(option);
-            DisplayBreakpoint();
-            MakingLemonade();
-            DisplayBreakpoint();
-            Console.ReadKey();
-            GoSellLemonade();
-            DisplayBreakpoint();
-            Console.ReadKey();
-            //wallet.GenerateProfit();
-            //wallet.GenerateLoss();
-            DisplayDailyReport();
-            DisplayBreakpoint();
-            StartDay();
+            for (var i = 0; i < daysToPlay; i++)
+            {
+                day.AddDay();
+                day.DisplayCurrentDay();
+                day.weather.GenerateRandomWeather();
+                DisplayBreakpoint();
+                Console.ReadKey();
+                day.DisplayCurrentWeather();
+                day.weather.GeneratePredictedWeather();
+                day.DisplayPredictedWeather();
+                DisplayBreakpoint();
+                Console.ReadKey();
+                wallet.DisplayMakeLemonade();
+                DisplayBreakpoint();
+                store.GoToStore();
+                DisplayBreakpoint();
+                string option = playerOne.PitcherRecipeOption();
+                playerOne.PitcherResult(option);
+                DisplayBreakpoint();
+                MakingLemonade();
+                DisplayBreakpoint();
+                Console.ReadKey();
+                GoSellLemonade();
+                DisplayBreakpoint();
+                Console.ReadKey();
+                //wallet.GenerateProfit();
+                //wallet.GenerateLoss();
+                DisplayDailyReport();
+                DisplayBreakpoint();
+                Console.ReadKey();
+                //StartDay();
+            }           
         }
     }
 }
