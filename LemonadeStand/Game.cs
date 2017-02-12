@@ -167,7 +167,6 @@ namespace LemonadeStand
                 DisplayDailyReport();
                 DisplayBreakpoint();
                 Console.ReadKey();
-                //StartDay();
             }           
         }
     }
