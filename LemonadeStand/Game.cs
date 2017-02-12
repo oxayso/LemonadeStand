@@ -113,7 +113,7 @@ namespace LemonadeStand
             Console.WriteLine("\nTHANKS FOR VISITING LEMONLAND!");
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine("\nPRESS [ENTER] TO LEAVE.");
+            Console.WriteLine("\nPRESS [ENTER] TO CONTINUE.");
             Console.ResetColor();
         }
 
@@ -132,9 +132,13 @@ namespace LemonadeStand
             playerOne.PrintPlayerName();
             DisplayBreakpoint();
             Console.ReadKey();
-            day.weather.GenerateRandomWeather();
+            StartDay();
+        }
+        public void StartDay()
+        {
+            day.AddDay();
             day.DisplayCurrentDay();
-            day.weather.GenerateRandomPrice();
+            day.weather.GenerateRandomWeather();
             DisplayBreakpoint();
             Console.ReadKey();
             day.DisplayCurrentWeather();
@@ -157,8 +161,9 @@ namespace LemonadeStand
             Console.ReadKey();
             //wallet.GenerateProfit();
             //wallet.GenerateLoss();
-            DisplayDailyReport();           
+            DisplayDailyReport();
             DisplayBreakpoint();
+            StartDay();
         }
     }
 }
