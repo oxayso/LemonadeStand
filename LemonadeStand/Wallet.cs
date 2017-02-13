@@ -14,7 +14,12 @@ namespace LemonadeStand
         public double icePrice = 0.01;
         public double cupPrice = 0.05;
         public double expense;
-        public double pitcherChange;
+        public double moneyStatus;
+        //public double pitcherChange;
+        public double lemonsPrice;
+        public double sugarsPrice;
+        public double icesPrice;
+        public double cupsPrice;
 
         public void DisplayMakeLemonade()
         {
@@ -28,37 +33,63 @@ namespace LemonadeStand
 
         public double CalculateExpenses(double money, double lemonsPrice, double sugarsPrice, double icesPrice, double cupsPrice)
         {
-            double expense = money - lemonsPrice - sugarsPrice - icesPrice - cupsPrice;
+            expense = lemonsPrice + sugarsPrice + icesPrice + cupsPrice;
             return expense;
         }
 
-        public double CalculatePitcherChange(double money, double lemonsPrice, double sugarsPrice, double icesPrice, double cupsPrice)
+        public double UpdateMoney()
         {
-            double pitcherChange = money - lemonsPrice - sugarsPrice - icesPrice - cupsPrice;
-            return pitcherChange;
+            moneyStatus = money - expense;
+            return moneyStatus;
         }
+
+        //public double CalculatePitcherChange(double money, double lemonsPrice, double sugarsPrice, double icesPrice, double cupsPrice)
+        //{
+        //    double pitcherChange = money - lemonsPrice - sugarsPrice - icesPrice - cupsPrice;
+        //    return pitcherChange;
+        //}
 
         public double totalLemonPrice(int lemonCount)
         {
-            double lemonsPrice = lemonCount * lemonPrice;
+            lemonsPrice = lemonCount * lemonPrice;
             return lemonsPrice;
         }
+        public double SubtractLemonPrice(double lemonsPrice)
+        {
+            double lemonSubTotal = lemonsPrice - money;
+            return lemonSubTotal;
+        }
 
+        public double SubtractSugarPrice(double sugarsPrice)
+        {
+            double sugarSubTotal = sugarsPrice - money;
+            return sugarSubTotal;
+        }
+        public double SubtractIcePrice(double icesPrice)
+        {
+            double iceSubTotal = icesPrice - money;
+            return iceSubTotal;
+        }
+        public double SubtractCupPrice(double cupsPrice)
+        {
+            double cupSubTotal = cupsPrice - money;
+            return cupSubTotal;
+        }
         public double totalSugarPrice(int sugarCount)
         {
-            double sugarsPrice = sugarCount * sugarPrice;
+            sugarsPrice = sugarCount * sugarPrice;
             return sugarsPrice;
         }
 
         public double totalIcePrice(int iceCount)
         {
-            double icesPrice = iceCount * icePrice;
+            icesPrice = iceCount * icePrice;
             return icesPrice;
         }
 
         public double toalCupPrice(int cupCount)
         {
-            double cupsPrice = cupCount * cupPrice;
+            cupsPrice = cupCount * cupPrice;
             return cupsPrice;
         }
 

@@ -77,18 +77,24 @@ namespace LemonadeStand
             Console.ResetColor();
             Console.WriteLine("-How many lemons will you need? 0.05¢ ");
             lemonCount = int.Parse(Console.ReadLine());
+            wallet.totalLemonPrice(lemonCount);
             Console.WriteLine("-How many spoons of sugar would you like to use? 0.03¢");
             sugarCount = int.Parse(Console.ReadLine());
+            wallet.totalSugarPrice(sugarCount);
             Console.WriteLine("-How many cubes of ice will you need? 0.01¢");
             iceCount = int.Parse(Console.ReadLine());
+            wallet.totalIcePrice(iceCount);
             Console.WriteLine("-How many cups do you need? 0.05¢");
             cupCount = int.Parse(Console.ReadLine());
+            wallet.toalCupPrice(cupCount);
             Console.WriteLine($"\n{name}'s Recipe:\n\nLemons: {lemonCount} \nSpoons of Sugar: {sugarCount} \nIce Cubes: {iceCount} "
                 +$"\nCups: {cupCount} \n");
             Console.WriteLine($"\nCash: ${wallet.money}.00");
-            Console.WriteLine($"Change: ${wallet.money - wallet.pitcherChange}"); 
+            wallet.CalculateExpenses(wallet.money, wallet.lemonsPrice, wallet.sugarsPrice, wallet.icesPrice, wallet.cupsPrice);
+            Console.WriteLine($"Total Expense: ${wallet.expense}"); 
             Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.WriteLine($"\nWallet Status = ");
+            wallet.UpdateMoney();
+            Console.WriteLine($"\nWallet Status = {wallet.moneyStatus}");
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("\nPress [ENTER] to Continue");

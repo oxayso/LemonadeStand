@@ -8,6 +8,5 @@ namespace LemonadeStand
 {
     public class Sugar
     {
-        public double sugarPrice = 0.03;
     }
 }
